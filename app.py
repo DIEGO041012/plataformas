@@ -8,6 +8,11 @@ db = dbase.dbConnection()
 app = Flask(__name__)
 
 # Ruta de inicio: Mostrar todos los usuarios
+@app.route('/gastoscasa')
+def gastoscasa():
+    return render_template('gastoscasa.html')
+
+
 @app.route('/')
 def home():
     users = db['users']

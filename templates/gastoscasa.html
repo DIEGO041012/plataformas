@@ -1,0 +1,73 @@
+
+{% include 'cabeza.html' %}
+
+
+<div class="container">
+    <h1>Control de gastos</h1>
+
+    <form action="/guardar_gasto" method="POST">
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="Educación">Educación</option>
+                <option value="Cuidado Personal">Cuidado Personal</option>
+                <option value="Desayuno">Desayuno</option>
+                <option value="Cena">Cena</option>
+                <option value="Ocio">Ocio</option>
+                <!-- Agrega más categorías según sea necesario -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="gastos">Gastos:</label>
+            <input type="number" id="gastos" name="gastos" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ingresos">Ingresos:</label>
+            <input type="number" id="ingresos" name="ingresos">
+        </div>
+
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group">
+            <label for="ahorro">Ahorro:</label>
+            <input type="number" id="ahorro" name="ahorro">
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Guardar" class="guardar">
+            <input type="button" value="Eliminar" class="eliminar">
+            <input type="button" value="Seleccionar" class="seleccionar">
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Descripción</th>
+                <th>Categoría</th>
+                <th>Gastos</th>
+                <th>Ingresos</th>
+                <th>Ahorro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se añadirán dinámicamente las filas de datos desde el servidor -->
+        </tbody>
+    </table>
+</div>
+
+{% include 'pie.html' %}
+
+
